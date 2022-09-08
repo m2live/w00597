@@ -1,10 +1,9 @@
 {
     "meta": {
-        "version": "1.0.4/1",
+        "version": "1.0.4/1;workstack=7",
         "admin": "",
         "defaultHosting": ""
     },
-    "hosting": [],
     "env": {
         "management": {
             "api": {
@@ -134,7 +133,7 @@
                 "rolling": {
                     "size": 1
                 },
-                "retention": 5,
+                "retention": 6,
                 "compression": false
             },
             "system": {
@@ -847,7 +846,7 @@
         "operations": {
             "log": {
                 "meta": {
-                    "dir": "/m2log"
+                    "dir": "/m2live_log"
                 },
                 "access": {
                     "enable": true,
@@ -911,5 +910,6 @@
                 "endpoints": []
             }
         }
-    }
+    },
+    "hosting": []
 }

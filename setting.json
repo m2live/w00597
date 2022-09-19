@@ -1,6 +1,6 @@
 {
     "meta": {
-        "version": "1.0.4/1;workstack=49",
+        "version": "1.0.4/1;workstack=48",
         "admin": "",
         "defaultHosting": ""
     },
@@ -914,15 +914,14 @@
     "hosting": [
         {
             "listen": "*:80",
-            "name": "image.winesoft.com",
             "functions": {
                 "contents": {
                     "dims": {
                         "meta": {
-                            "keyword": "dims2",
-                            "enable": true,
                             "minSourceSize": 0,
-                            "maxSourceSize": 3
+                            "maxSourceSize": 3,
+                            "keyword": "dims1",
+                            "enable": true
                         }
                     }
                 }
@@ -933,6 +932,7 @@
                 ],
                 "protocol": "http"
             },
+            "name": "image.winesoft.com",
             "enable": true
         }
     ]

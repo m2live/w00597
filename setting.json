@@ -1,6 +1,6 @@
 {
     "meta": {
-        "version": "1.0.4/1;workstack=51",
+        "version": "1.0.4/1;workstack=53",
         "admin": "",
         "defaultHosting": ""
     },
@@ -914,6 +914,13 @@
     "hosting": [
         {
             "listen": "*:80",
+            "origin": {
+                "protocol": "http",
+                "address": [
+                    "demo.winesoft.co.kr"
+                ]
+            },
+            "name": "test5.winesoft.com",
             "functions": {
                 "contents": {
                     "epubedit": {
@@ -921,12 +928,12 @@
                             "prefix": []
                         },
                         "archive": {
-                            "rules": [],
-                            "enable": true
+                            "enable": true,
+                            "rules": []
                         },
                         "meta": {
-                            "enable": true,
-                            "keyword": "epubedit"
+                            "keyword": "epubedit",
+                            "enable": true
                         }
                     },
                     "unzip": {
@@ -948,43 +955,36 @@
                     "dims": {
                         "meta": {
                             "maxSourceSize": 2,
-                            "minSourceSize": 0,
                             "keyword": "dims",
+                            "minSourceSize": 0,
                             "enable": true
                         }
                     }
                 }
             },
-            "name": "test5.winesoft.com",
+            "enable": true
+        },
+        {
+            "listen": "*:80",
+            "name": "image.winesoft.com",
+            "functions": {
+                "contents": {
+                    "dims": {
+                        "meta": {
+                            "keyword": "dims6",
+                            "enable": true,
+                            "minSourceSize": 0,
+                            "maxSourceSize": 3
+                        }
+                    }
+                }
+            },
             "origin": {
                 "address": [
                     "demo.winesoft.co.kr"
                 ],
                 "protocol": "http"
             },
-            "enable": true
-        },
-        {
-            "listen": "*:80",
-            "origin": {
-                "protocol": "http",
-                "address": [
-                    "demo.winesoft.co.kr"
-                ]
-            },
-            "functions": {
-                "contents": {
-                    "dims": {
-                        "meta": {
-                            "enable": true,
-                            "maxSourceSize": 3,
-                            "keyword": "dims3",
-                            "minSourceSize": 0
-                        }
-                    }
-                }
-            },
-            "name": "image.winesoft.com",
             "enable": true
         }
     ]

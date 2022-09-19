@@ -1,6 +1,6 @@
 {
     "meta": {
-        "version": "1.0.4/1;workstack=48",
+        "version": "1.0.4/1;workstack=50",
         "admin": "",
         "defaultHosting": ""
     },
@@ -918,9 +918,9 @@
                 "contents": {
                     "dims": {
                         "meta": {
-                            "minSourceSize": 0,
                             "maxSourceSize": 3,
-                            "keyword": "dims1",
+                            "keyword": "dims2",
+                            "minSourceSize": 0,
                             "enable": true
                         }
                     }
@@ -933,6 +933,58 @@
                 "protocol": "http"
             },
             "name": "image.winesoft.com",
+            "enable": true
+        },
+        {
+            "listen": "*:80",
+            "name": "test5.winesoft.com",
+            "origin": {
+                "address": [
+                    "demo.winesoft.co.kr"
+                ],
+                "protocol": "http"
+            },
+            "functions": {
+                "contents": {
+                    "unzip": {
+                        "meta": {
+                            "keyword": "unzip",
+                            "enable": true
+                        }
+                    },
+                    "dims": {
+                        "meta": {
+                            "enable": true,
+                            "minSourceSize": 0,
+                            "keyword": "dims",
+                            "maxSourceSize": 2
+                        }
+                    },
+                    "epubedit": {
+                        "archive": {
+                            "rules": [],
+                            "enable": true
+                        },
+                        "meta": {
+                            "keyword": "epubedit",
+                            "enable": true
+                        },
+                        "trim": {
+                            "prefix": []
+                        }
+                    },
+                    "denc": {
+                        "meta": {
+                            "keyword": "denc",
+                            "enable": true
+                        },
+                        "bulk": {
+                            "enable": true,
+                            "keyword": "dencbulk"
+                        }
+                    }
+                }
+            },
             "enable": true
         }
     ]

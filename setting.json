@@ -1,6 +1,6 @@
 {
     "meta": {
-        "version": "1.0.4/1;workstack=65",
+        "version": "1.0.4/1;workstack=69",
         "admin": "",
         "defaultHosting": ""
     },
@@ -163,7 +163,7 @@
                 },
                 "disks": [],
                 "cleanup": {
-                    "time": "03:00",
+                    "time": "04:00",
                     "age": 0,
                     "emptyDir": "delete",
                     "fileCount": 0,

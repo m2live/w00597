@@ -1,6 +1,6 @@
 {
     "meta": {
-        "version": "1.0.3/1;workstack=72",
+        "version": "1.0.5/1;workstack=73",
         "admin": "",
         "defaultHosting": ""
     },
@@ -74,7 +74,7 @@
         },
         "properties": {
             "memoryUsage": {
-                "totalUsableRatio": 90,
+                "totalUsableRatio": 95,
                 "workingRatio": 60,
                 "partition": "1:1"
             },
@@ -365,7 +365,7 @@
                     },
                     "out": {
                         "at": null,
-                        "escpaed": true
+                        "escaped": true
                     }
                 },
                 "dom": {
@@ -418,7 +418,7 @@
                     "sizeLimit": {
                         "enable": true,
                         "max": 1048576,
-                        "timing": "download"
+                        "timing": "preprocess"
                     }
                 }
             },
@@ -483,8 +483,11 @@
                     "rebound": {
                         "domain": null,
                         "tags": {
-                            "domain": "bar.com",
-                            "targets": []
+                            "domain": null,
+                            "targets": [
+                                "script.src",
+                                "link.href"
+                            ]
                         }
                     },
                     "resource": {
@@ -824,6 +827,10 @@
                             "enable": false,
                             "matchFirstOnly": false,
                             "matchingList": []
+                        },
+                        "forwardContextId": {
+                            "enable": false,
+                            "header": "X-M2X-Forwarded-Context-Id"
                         }
                     },
                     "authorization": {

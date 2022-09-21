@@ -1,6 +1,6 @@
 {
     "meta": {
-        "version": "1.0.4/1;workstack=69",
+        "version": "1.0.3/1;workstack=72",
         "admin": "",
         "defaultHosting": ""
     },
@@ -365,7 +365,7 @@
                     },
                     "out": {
                         "at": null,
-                        "escaped": true
+                        "escpaed": true
                     }
                 },
                 "dom": {
@@ -418,7 +418,7 @@
                     "sizeLimit": {
                         "enable": true,
                         "max": 1048576,
-                        "timing": "preprocess"
+                        "timing": "download"
                     }
                 }
             },
@@ -483,11 +483,8 @@
                     "rebound": {
                         "domain": null,
                         "tags": {
-                            "domain": null,
-                            "targets": [
-                                "script.src",
-                                "link.href"
-                            ]
+                            "domain": "bar.com",
+                            "targets": []
                         }
                     },
                     "resource": {
@@ -827,10 +824,6 @@
                             "enable": false,
                             "matchFirstOnly": false,
                             "matchingList": []
-                        },
-                        "forwardContextId": {
-                            "enable": false,
-                            "header": "X-M2X-Forwarded-Context-Id"
                         }
                     },
                     "authorization": {
@@ -920,79 +913,75 @@
     },
     "hosting": [
         {
-            "listen": "*:80",
-            "name": "test5.winesoft.com",
             "functions": {
                 "contents": {
                     "dims": {
                         "meta": {
-                            "keyword": "dims",
                             "enable": true,
+                            "keyword": "dims9",
+                            "minSourceSize": 0,
+                            "maxSourceSize": 4
+                        }
+                    }
+                }
+            },
+            "name": "image.winesoft.com",
+            "origin": {
+                "protocol": "http",
+                "address": [
+                    "demo.winesoft.co.kr"
+                ]
+            }
+        },
+        {
+            "functions": {
+                "contents": {
+                    "unzip": {
+                        "meta": {
+                            "enable": true,
+                            "keyword": "unzip"
+                        }
+                    },
+                    "dims": {
+                        "meta": {
+                            "enable": true,
+                            "keyword": "dims",
                             "minSourceSize": 0,
                             "maxSourceSize": 2
                         }
                     },
-                    "epubedit": {
-                        "meta": {
-                            "keyword": "epubedit",
-                            "enable": true
-                        },
-                        "archive": {
-                            "enable": true,
-                            "rules": []
-                        },
-                        "trim": {
-                            "prefix": []
-                        }
-                    },
                     "denc": {
                         "bulk": {
-                            "enable": true,
-                            "keyword": "dencbulk"
+                            "keyword": "dencbulk",
+                            "enable": true
                         },
                         "meta": {
                             "enable": true,
                             "keyword": "denc"
                         }
                     },
-                    "unzip": {
+                    "epubedit": {
+                        "archive": {
+                            "enable": true,
+                            "rules": []
+                        },
                         "meta": {
                             "enable": true,
-                            "keyword": "unzip"
+                            "keyword": "epubedit"
+                        },
+                        "trim": {
+                            "prefix": []
                         }
                     }
                 }
             },
+            "name": "test5.winesoft.com",
             "origin": {
+                "protocol": "http",
                 "address": [
                     "demo.winesoft.co.kr"
-                ],
-                "protocol": "http"
-            },
-            "enable": true
-        },
-        {
-            "listen": "*:80",
-            "origin": {
-                "address": [
-                    "demo.winesoft.co.kr"
-                ],
-                "protocol": "http"
-            },
-            "functions": {
-                "contents": {
-                    "dims": {
-                        "meta": {
-                            "keyword": "dims9",
-                            "maxSourceSize": 4,
-                            "minSourceSize": 0,
-                            "enable": true
-                        }
-                    }
-                }
-            },
-            "name": "image.winesoft.com",
-            "enable": true
+                ]
+            }
         }
     ]
 }

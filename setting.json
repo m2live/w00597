@@ -1,6 +1,6 @@
 {
     "meta": {
-        "version": "1.0.5/1;workstack=80",
+        "version": "1.0.5/1;workstack=81",
         "admin": "",
         "defaultHosting": ""
     },
@@ -921,24 +921,24 @@
     "hosting": [
         {
             "listen": "*:80",
-            "functions": {
-                "contents": {
-                    "dims": {
-                        "meta": {
-                            "keyword": "dims9",
-                            "enable": true,
-                            "maxSourceSize": 4,
-                            "minSourceSize": 0
-                        }
-                    }
-                }
-            },
-            "name": "image.winesoft.com",
             "origin": {
                 "address": [
                     "demo.winesoft.co.kr"
                 ],
                 "protocol": "http"
+            },
+            "name": "image.winesoft.com",
+            "functions": {
+                "contents": {
+                    "dims": {
+                        "meta": {
+                            "keyword": "dims9",
+                            "minSourceSize": 0,
+                            "maxSourceSize": 4,
+                            "enable": true
+                        }
+                    }
+                }
             },
             "enable": true
         },
@@ -950,18 +950,27 @@
                 ],
                 "protocol": "http"
             },
+            "name": "test5.winesoft.com",
             "functions": {
                 "contents": {
                     "epubedit": {
                         "trim": {
                             "prefix": []
                         },
+                        "archive": {
+                            "enable": true,
+                            "rules": []
+                        },
                         "meta": {
                             "enable": true,
                             "keyword": "epubedit"
-                        },
-                        "archive": {
-                            "rules": [],
+                        }
+                    },
+                    "dims": {
+                        "meta": {
+                            "maxSourceSize": 2,
+                            "minSourceSize": 0,
+                            "keyword": "dims",
                             "enable": true
                         }
                     },
@@ -972,56 +981,47 @@
                         }
                     },
                     "denc": {
-                        "meta": {
-                            "enable": true,
-                            "keyword": "denc"
-                        },
                         "bulk": {
                             "enable": true,
                             "keyword": "dencbulk"
-                        }
-                    },
-                    "dims": {
+                        },
                         "meta": {
-                            "maxSourceSize": 2,
                             "enable": true,
-                            "keyword": "dims",
-                            "minSourceSize": 0
+                            "keyword": "denc"
                         }
                     }
                 }
             },
-            "name": "test5.winesoft.com",
             "enable": true
         },
         {
             "listen": "*:80",
-            "name": "test3.winesoft.com",
-            "origin": {
-                "address": [
-                    "demo.winesoft.co.kr"
-                ],
-                "protocol": "http"
-            },
             "functions": {
                 "network": {
                     "proxy": {
                         "meta": {
-                            "enable": true,
-                            "keyword": "proxy"
+                            "keyword": "proxy",
+                            "enable": true
                         }
                     }
                 },
                 "contents": {
                     "dims": {
                         "meta": {
-                            "maxSourceSize": 2,
                             "enable": true,
                             "minSourceSize": 0,
+                            "maxSourceSize": 3,
                             "keyword": "dims"
                         }
                     }
                 }
+            },
+            "name": "test3.winesoft.com",
+            "origin": {
+                "address": [
+                    "demo.winesoft.co.kr"
+                ],
+                "protocol": "http"
             },
             "enable": true
         }

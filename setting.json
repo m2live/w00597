@@ -1,6 +1,6 @@
 {
     "meta": {
-        "version": "1.0.6/1;workstack=82",
+        "version": "1.0.6/1;workstack=84",
         "admin": "",
         "defaultHosting": ""
     },
@@ -938,104 +938,58 @@
     },
     "hosting": [
         {
+            "listen": "*:80",
+            "origin": {
+                "protocol": "http",
+                "address": [
+                    "demo.winesoft.co.kr"
+                ]
+            },
             "functions": {
                 "contents": {
                     "dims": {
                         "meta": {
-                            "enable": true,
                             "keyword": "dims9",
-                            "minSourceSize": 0,
-                            "maxSourceSize": 4
+                            "maxSourceSize": 4,
+                            "enable": true,
+                            "minSourceSize": 0
                         }
                     }
                 }
             },
             "name": "image.winesoft.com",
-            "origin": {
-                "protocol": "http",
-                "address": [
-                    "demo.winesoft.co.kr"
-                ]
-            }
+            "enable": true
         },
         {
-            "functions": {
-                "contents": {
-                    "dims": {
-                        "meta": {
-                            "enable": true,
-                            "keyword": "dims",
-                            "minSourceSize": 0,
-                            "maxSourceSize": 2
-                        }
-                    },
-                    "denc": {
-                        "bulk": {
-                            "keyword": "dencbulk",
-                            "enable": true
-                        },
-                        "meta": {
-                            "keyword": "denc",
-                            "enable": true
-                        }
-                    },
-                    "unzip": {
-                        "meta": {
-                            "enable": true,
-                            "keyword": "unzip"
-                        }
-                    },
-                    "epubedit": {
-                        "archive": {
-                            "rules": [],
-                            "enable": true
-                        },
-                        "meta": {
-                            "enable": true,
-                            "keyword": "epubedit"
-                        },
-                        "trim": {
-                            "prefix": []
-                        }
-                    }
-                }
-            },
-            "name": "test5.winesoft.com",
-            "origin": {
-                "protocol": "http",
-                "address": [
-                    "demo.winesoft.co.kr"
-                ]
-            }
-        },
-        {
-            "functions": {
-                "contents": {
-                    "dims": {
-                        "meta": {
-                            "enable": true,
-                            "keyword": "dims",
-                            "minSourceSize": 0,
-                            "maxSourceSize": 3
-                        }
-                    }
-                },
-                "network": {
-                    "proxy": {
-                        "meta": {
-                            "enable": true,
-                            "keyword": "proxy"
-                        }
-                    }
-                }
-            },
+            "listen": "*:80",
             "name": "test3.winesoft.com",
             "origin": {
                 "protocol": "http",
                 "address": [
                     "demo.winesoft.co.kr"
                 ]
-            }
+            },
+            "functions": {
+                "network": {
+                    "proxy": {
+                        "meta": {
+                            "keyword": "proxy",
+                            "enable": true
+                        }
+                    }
+                },
+                "contents": {
+                    "dims": {
+                        "meta": {
+                            "maxSourceSize": 3,
+                            "keyword": "dims",
+                            "enable": true,
+                            "minSourceSize": 0
+                        }
+                    }
+                }
+            },
+            "enable": true
         }
     ]
 }

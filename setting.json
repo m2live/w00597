@@ -1,6 +1,6 @@
 {
     "meta": {
-        "version": "1.0.5/1;workstack=73",
+        "version": "1.0.5/1;workstack=80",
         "admin": "",
         "defaultHosting": ""
     },
@@ -920,75 +920,110 @@
     },
     "hosting": [
         {
+            "listen": "*:80",
             "functions": {
                 "contents": {
                     "dims": {
                         "meta": {
-                            "enable": true,
                             "keyword": "dims9",
-                            "minSourceSize": 0,
-                            "maxSourceSize": 4
+                            "enable": true,
+                            "maxSourceSize": 4,
+                            "minSourceSize": 0
                         }
                     }
                 }
             },
             "name": "image.winesoft.com",
             "origin": {
-                "protocol": "http",
                 "address": [
                     "demo.winesoft.co.kr"
-                ]
-            }
+                ],
+                "protocol": "http"
+            },
+            "enable": true
         },
         {
+            "listen": "*:80",
+            "origin": {
+                "address": [
+                    "demo.winesoft.co.kr"
+                ],
+                "protocol": "http"
+            },
             "functions": {
                 "contents": {
-                    "unzip": {
-                        "meta": {
-                            "enable": true,
-                            "keyword": "unzip"
-                        }
-                    },
-                    "dims": {
-                        "meta": {
-                            "enable": true,
-                            "keyword": "dims",
-                            "minSourceSize": 0,
-                            "maxSourceSize": 2
-                        }
-                    },
-                    "denc": {
-                        "bulk": {
-                            "keyword": "dencbulk",
-                            "enable": true
-                        },
-                        "meta": {
-                            "enable": true,
-                            "keyword": "denc"
-                        }
-                    },
                     "epubedit": {
-                        "archive": {
-                            "enable": true,
-                            "rules": []
+                        "trim": {
+                            "prefix": []
                         },
                         "meta": {
                             "enable": true,
                             "keyword": "epubedit"
                         },
-                        "trim": {
-                            "prefix": []
+                        "archive": {
+                            "rules": [],
+                            "enable": true
+                        }
+                    },
+                    "unzip": {
+                        "meta": {
+                            "keyword": "unzip",
+                            "enable": true
+                        }
+                    },
+                    "denc": {
+                        "meta": {
+                            "enable": true,
+                            "keyword": "denc"
+                        },
+                        "bulk": {
+                            "enable": true,
+                            "keyword": "dencbulk"
+                        }
+                    },
+                    "dims": {
+                        "meta": {
+                            "maxSourceSize": 2,
+                            "enable": true,
+                            "keyword": "dims",
+                            "minSourceSize": 0
                         }
                     }
                 }
             },
             "name": "test5.winesoft.com",
+            "enable": true
+        },
+        {
+            "listen": "*:80",
+            "name": "test3.winesoft.com",
             "origin": {
-                "protocol": "http",
                 "address": [
                     "demo.winesoft.co.kr"
-                ]
-            }
+                ],
+                "protocol": "http"
+            },
+            "functions": {
+                "network": {
+                    "proxy": {
+                        "meta": {
+                            "enable": true,
+                            "keyword": "proxy"
+                        }
+                    }
+                },
+                "contents": {
+                    "dims": {
+                        "meta": {
+                            "maxSourceSize": 2,
+                            "enable": true,
+                            "minSourceSize": 0,
+                            "keyword": "dims"
+                        }
+                    }
+                }
+            },
+            "enable": true
         }
     ]
 }

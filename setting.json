@@ -1,6 +1,6 @@
 {
     "meta": {
-        "version": "1.0.6/1;workstack=85",
+        "version": "1.0.6/1;workstack=86",
         "admin": "",
         "defaultHosting": ""
     },
@@ -939,7 +939,12 @@
     "hosting": [
         {
             "listen": "*:80",
-            "name": "test3.winesoft.com",
+            "origin": {
+                "protocol": "http",
+                "address": [
+                    "demo.winesoft.co.kr"
+                ]
+            },
             "functions": {
                 "network": {
                     "proxy": {
@@ -952,20 +957,15 @@
                 "contents": {
                     "dims": {
                         "meta": {
-                            "enable": true,
-                            "keyword": "dims",
                             "minSourceSize": 0,
-                            "maxSourceSize": 3
+                            "keyword": "dims",
+                            "enable": true,
+                            "maxSourceSize": 2
                         }
                     }
                 }
             },
-            "origin": {
-                "address": [
-                    "demo.winesoft.co.kr"
-                ],
-                "protocol": "http"
-            },
+            "name": "test.winesoft.com",
             "enable": true
         }
     ]
